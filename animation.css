@@ -1,0 +1,129 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #87ceeb; /* Sky blue */
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+.scene {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* 🌞 Sun Animation */
+.sun {
+  position: absolute;
+  top: 2%;
+  left: 2%;
+  width: 80px;
+  height: 80px;
+  animation: rotate-sun 20s linear infinite;
+  z-index: 10;
+}
+
+@keyframes rotate-sun {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* 🛣️ Road Background */
+.road-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.road {
+  width: 200%;
+  height: 100%;
+  background: url('assects/imgi_122_9c72ecb41af25dfdd94739d4587b4efd.jpg') repeat-x;
+  background-size: contain;
+  animation: move-road 3s linear infinite;
+}
+
+@keyframes move-road {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* 🚗 Car & Wheels */
+.car-container {
+  position: absolute;
+  bottom: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: auto;
+  z-index: 5;
+}
+
+.car-body {
+  width: 100%;
+  display: block;
+}
+
+/* Wheel positioning and animation */
+.wheel {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  animation: spin-wheel 1s linear infinite;
+}
+
+.front-wheel {
+  bottom: -5px;  
+  left: 204px;    
+}
+
+.back-wheel {
+  bottom: -5px;   
+  left: 23px;     
+}
+
+@keyframes spin-wheel {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+  .sun {
+    width: 60px;
+    height: 60px;
+  }
+
+  .car-container {
+    width: 200px;
+    bottom: 100px;
+  }
+
+  .wheel {
+    width: 40px;
+    height: 40px;
+  }
+
+  .front-wheel {
+    left: 140px;
+    bottom: -3px; 
+  }
+
+  .back-wheel {
+    left: 20px;
+    bottom: -3px;  
+  }
+
+  .road-container {
+    height: 100px;
+  }
+}

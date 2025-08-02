@@ -127,3 +127,30 @@ body {
     height: 100px;
   }
 }
+
+/* Night mode styles */
+.night-mode {
+  background: #1a237e !important; /* Dark blue */
+}
+
+.night-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(20, 24, 50, 0.5);
+  pointer-events: none;
+  z-index: 15;
+  display: none;
+}
+
+body.night .night-overlay {
+  display: block;
+}
+
+body.night {
+  background: #1a237e !important;
+}
+
+body.night .sun {
+  opacity: 0.3;
+}

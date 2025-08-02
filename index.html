@@ -20,5 +20,35 @@
       <img src="assects/nicewheel.png" alt="Back Wheel" class="wheel back-wheel" />
     </div>
   </div>
+  <!-- 🚀 Speed Control Slider -->
+<div style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); z-index: 100; background: rgba(255,255,255,0.7); padding: 8px 12px; border-radius: 10px; font-family: sans-serif;">
+  <label for="speedRange" style="color: #000; font-weight: bold;">Speed:</label>
+  <input type="range" id="speedRange" min="0.5" max="5" value="3" step="0.1">
+</div>
+
+<script>
+  const road = document.querySelector('.road');
+  const wheels = document.querySelectorAll('.wheel');
+  const speedRange = document.getElementById('speedRange');
+
+  // Initialize default speed
+  road.style.animationDuration = speedRange.value + 's';
+  wheels.forEach(wheel => {
+    wheel.style.animationDuration = (speedRange.value / 3) + 's';
+  });
+
+  speedRange.addEventListener('input', () => {
+    const speed = speedRange.value;
+
+    // Update road speed
+    road.style.animationDuration = speed + 's';
+
+    // Update wheel spin speed (proportional to road speed)
+    wheels.forEach(wheel => {
+      wheel.style.animationDuration = (speed / 3) + 's';
+    });
+  });
+</script>
+
 </body>
 </html>

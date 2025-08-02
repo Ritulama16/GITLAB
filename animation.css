@@ -47,7 +47,7 @@ body {
 .road {
   width: 200%;
   height: 100%;
-  background: url('assects/imgi_122_9c72ecb41af25dfdd94739d4587b4efd.jpg') repeat-x;
+  background: url('/GITLAB/assects/images.jpg') repeat-x;
   background-size: contain;
   animation: move-road 3s linear infinite;
 }
@@ -60,8 +60,8 @@ body {
 /* 🚗 Car & Wheels */
 .car-container {
   position: absolute;
-  bottom: 120px;
-  left: 50%;
+  bottom: 50px;
+  left: 60%;
   transform: translateX(-50%);
   width: 300px;
   height: auto;
